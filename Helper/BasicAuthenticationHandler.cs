@@ -40,8 +40,9 @@ namespace LogProxyAPI.Helper
                 var credentials = Encoding.UTF8.GetString(credentialBytes).Split(':');
                 var username = credentials[0];
                 var password = credentials[1];
-
-                if (_configuration[username] != username || _configuration[password] != password)
+                var configuredUserName = _configuration["usrname"];
+                var configuredPassword = _configuration["password"];
+                if (configuredUserName != username || configuredPassword != password)
                 {
                     return Task.FromResult(AuthenticateResult.Fail("Invalid Credential")); ;
                 }
