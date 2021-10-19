@@ -12,7 +12,25 @@ namespace LogProxyAPI.Models
     }
     public class ExtendedSimpleJSON : SimpleJSON
     {
-        public int id { get; set; }
+        public string id { get; set; }
+        public DateTime receivedAt { get; set; }
+    }
+    public class ThirdPartyLog
+    {
+        public records records { get; set; }
+        public string offset { get; set; }
+    }
+    public class records
+    {
+        public string id { get; set; }
+        public fields fields { get; set; }
+        public DateTime createdTime { get; set; }
+    }
+    public class fields
+    {
+        public string id { get; set; }
+        public string Message { get; set; }
+        public string Summary { get; set; }
         public DateTime receivedAt { get; set; }
     }
 }

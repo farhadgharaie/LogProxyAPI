@@ -14,7 +14,7 @@ namespace LogProxyAPI.Services.Service
             throw new NotImplementedException();
         }
 
-        public void GetAllLogs()
+        IEnumerable<ExtendedSimpleJSON> ILogProxyService.GetAllLogs()
         {
             throw new NotImplementedException();
         }
