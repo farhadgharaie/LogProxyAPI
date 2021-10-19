@@ -7,7 +7,12 @@ namespace LogProxyAPI.Models
 {
     public class SimpleJSON
     {
-        public string title { get; set; }
-        public string text { get; set; }
+        public string Title { get; set; }
+        public string Text { get; set; }
+    }
+    public class ExtendedSimpleJSON : SimpleJSON
+    {
+        public int id { get; set; }
+        public DateTime receivedAt { get; set; }
     }
 }
