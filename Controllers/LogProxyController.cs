@@ -25,8 +25,14 @@ namespace LogProxyAPI.Controllers
         [HttpGet]
         public ActionResult<List<ExtendedSimpleJSON>> Get()
         {
-            var res=_logProxyService.GetAllLogs();
-            return res.Result.ToList();
+            try
+            {
+                var res = _logProxyService.GetAllLogs();
+                return res.Result.ToList();
+            }catch
+            {
+                return BadRequest();
+            }
         }
         [Authorize]
         [HttpPost]

@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogProxyAPI", "LogProxyAPI.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogProxy.Test", "..\LogProxy.Test\LogProxy.Test.csproj", "{45C87D7E-D76F-4E1A-9F5D-3D8A1A9A5818}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThirdPartyAPI.ACL", "..\ThirdPartyAPI.ACL\ThirdPartyAPI.ACL.csproj", "{CEBBD000-610C-4F8B-BC84-12D1E478D684}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogProxyAPI.Models", "..\LogProxyAPI.Models\LogProxyAPI.Models.csproj", "{67E59127-D9E6-4252-8B7A-8F4F14DF1339}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{45C87D7E-D76F-4E1A-9F5D-3D8A1A9A5818}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{45C87D7E-D76F-4E1A-9F5D-3D8A1A9A5818}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{45C87D7E-D76F-4E1A-9F5D-3D8A1A9A5818}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CEBBD000-610C-4F8B-BC84-12D1E478D684}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CEBBD000-610C-4F8B-BC84-12D1E478D684}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CEBBD000-610C-4F8B-BC84-12D1E478D684}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CEBBD000-610C-4F8B-BC84-12D1E478D684}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67E59127-D9E6-4252-8B7A-8F4F14DF1339}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67E59127-D9E6-4252-8B7A-8F4F14DF1339}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67E59127-D9E6-4252-8B7A-8F4F14DF1339}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67E59127-D9E6-4252-8B7A-8F4F14DF1339}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
