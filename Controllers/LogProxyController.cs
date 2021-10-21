@@ -1,4 +1,6 @@
 ﻿using LogProxyAPI.Models;
+using LogProxyAPI.Services.Interface;
+using LogProxyAPI.Services.Service;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -12,23 +14,26 @@ namespace LogProxyAPI.Controllers
     [ApiController]
     public class LogProxyController : Controller
     {
+        private readonly ILogProxyService _logProxyService;
+        public LogProxyController(ILogProxyService logProxyService)
+        {
+            _logProxyService = logProxyService;
+        }
+
+
         [Authorize]
         [HttpGet]
-        public ActionResult<string> Get()
+        public ActionResult<List<ExtendedSimpleJSON>> Get()
         {
-            // get all logs from third-party
-            return Ok("Ok");
+            var res=_logProxyService.GetAllLogs();
+            return res.Result.ToList();
         }
         [Authorize]
         [HttpPost]
         public IActionResult Post([FromBody] SimpleJSON value)
         {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-            var item = "";// _service.Add(value);
-            return CreatedAtAction("Get", new { id = item }, item);
+             _logProxyService.ForwardLog(value);
+            return Ok();
         }
     }
 }

@@ -1,4 +1,6 @@
 using LogProxyAPI.Helper;
+using LogProxyAPI.Services.Interface;
+using LogProxyAPI.Services.Service;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -17,6 +19,7 @@ namespace LogProxyAPI
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.Add(new ServiceDescriptor(typeof(ILogProxyService), new LogProxyService(new AirTable())));
             services.AddControllers();
             services.AddAuthentication("BasicAuth")
                 .AddScheme<AuthenticationSchemeOptions, BasicAuthenticationHandler>("BasicAuth", null);

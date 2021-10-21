@@ -15,18 +15,26 @@ namespace LogProxyAPI.Models
         public string id { get; set; }
         public DateTime receivedAt { get; set; }
     }
-    public class ThirdPartyLog
+    public class AirTableRequesModel
     {
-        public records records { get; set; }
+        public IEnumerable<RecordRequetModel> records { get; set; }
+    }
+    public class RecordRequetModel
+    {
+        public Fields fields { get; set; }
+    }
+    public class AirTableDto
+    {
+        public IEnumerable<RecordDto> records { get; set; }
         public string offset { get; set; }
     }
-    public class records
+    public class RecordDto
     {
         public string id { get; set; }
-        public fields fields { get; set; }
+        public Fields fields { get; set; }
         public DateTime createdTime { get; set; }
     }
-    public class fields
+    public class Fields
     {
         public string id { get; set; }
         public string Message { get; set; }
