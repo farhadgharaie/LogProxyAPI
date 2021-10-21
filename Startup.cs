@@ -32,7 +32,6 @@ namespace LogProxyAPI
             {
                 app.UseDeveloperExceptionPage();
             }
-
             app.UseRouting();
             app.UseAuthentication();
             app.UseAuthorization();
