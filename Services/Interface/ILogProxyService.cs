@@ -1,4 +1,5 @@
 ﻿using LogProxyAPI.Models;
+using LogProxyAPI.Models.LogProxy;
 using System;
 using System.Collections.Generic;
 using System.Linq;

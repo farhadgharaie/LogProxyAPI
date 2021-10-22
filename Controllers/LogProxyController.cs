@@ -1,12 +1,9 @@
-﻿using LogProxyAPI.Models;
+﻿using LogProxyAPI.Models.LogProxy;
 using LogProxyAPI.Services.Interface;
-using LogProxyAPI.Services.Service;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace LogProxyAPI.Controllers
 {

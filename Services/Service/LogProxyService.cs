@@ -1,8 +1,10 @@
 ﻿using LogProxyAPI.Models;
+using LogProxyAPI.Models.LogProxy;
 using LogProxyAPI.Services.Interface;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using ThirdPartyAPI.ACL.Interface;
 
 namespace LogProxyAPI.Services.Service
 {
