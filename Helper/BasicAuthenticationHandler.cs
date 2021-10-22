@@ -30,10 +30,6 @@ namespace LogProxyAPI.Helper
         }
         protected override Task<AuthenticateResult> HandleAuthenticateAsync()
         {
-            if (!Request.Headers.ContainsKey("Authorization"))
-            {
-                return Task.FromResult(AuthenticateResult.Fail("Invalid Authorization Header"));
-            }
             try
             {
                 var authHeader = AuthenticationHeaderValue.Parse(Request.Headers["Authorization"]);
@@ -42,7 +38,7 @@ namespace LogProxyAPI.Helper
                 var username = credentials[0];
                 var password = credentials[1];
                 
-                if (!_loginService.verify(username,password))
+                if (!_loginService.Verify(username,password))
                 {
                     return Task.FromResult(AuthenticateResult.Fail("Invalid Credential")); ;
                 }

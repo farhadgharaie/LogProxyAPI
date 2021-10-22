@@ -15,7 +15,7 @@ namespace LogProxyAPI.Services.Service
             _configuration = configuration;
         }
 
-        public bool verify(string username, string password)
+        public bool Verify(string username, string password)
         {
             var configuredUserName = _configuration["usrname"];
             var configuredPassword = _configuration["password"];

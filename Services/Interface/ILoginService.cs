@@ -7,6 +7,6 @@ namespace LogProxyAPI.Services.Interface
 {
     public interface ILoginService
     {
-        bool verify(string username, string password);
+        bool Verify(string username, string password);
     }
 }
