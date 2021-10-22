@@ -9,7 +9,7 @@ namespace LogProxyAPI.Services.Interface
 {
     public interface ILogProxyService
     {
-        void ForwardLog(SimpleJSON value);
-        Task<IEnumerable<ExtendedSimpleJSON>> GetAllLogs();
+        void ForwardLog(Log value);
+        Task<IEnumerable<ExtendedLog>> GetAllLogs();
     }
 }

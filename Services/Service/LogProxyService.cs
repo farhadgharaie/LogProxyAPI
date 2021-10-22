@@ -15,11 +15,11 @@ namespace LogProxyAPI.Services.Service
         {
             _thirdParty = thirdParty;
         }
-        public void ForwardLog(SimpleJSON value)
+        public void ForwardLog(Log value)
         {
             var randomId = new Random();
             randomId.Next(1000);
-            var extended = new ExtendedSimpleJSON
+            var extended = new ExtendedLog
             {
                 id = randomId.Next(1000).ToString(),
                 receivedAt = DateTime.Now,
@@ -28,7 +28,7 @@ namespace LogProxyAPI.Services.Service
             };
             _thirdParty.LogPost(extended);
         }
-        public Task<IEnumerable<ExtendedSimpleJSON>> GetAllLogs()
+        public Task<IEnumerable<ExtendedLog>> GetAllLogs()
         {
             var thirdPartyResult=_thirdParty.GetAll();
             return thirdPartyResult;

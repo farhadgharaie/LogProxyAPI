@@ -20,7 +20,7 @@ namespace LogProxyAPI.Controllers
 
         [Authorize]
         [HttpGet]
-        public ActionResult<List<ExtendedSimpleJSON>> Get()
+        public ActionResult<List<ExtendedLog>> Get()
         {
             try
             {
@@ -33,7 +33,7 @@ namespace LogProxyAPI.Controllers
         }
         [Authorize]
         [HttpPost]
-        public IActionResult Post([FromBody] SimpleJSON value)
+        public IActionResult Post([FromBody] Log value)
         {
              _logProxyService.ForwardLog(value);
             return Ok();

@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Authentication;
+﻿using LogProxyAPI.Services.Interface;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
@@ -15,17 +16,17 @@ namespace LogProxyAPI.Helper
 {
     public class BasicAuthenticationHandler : AuthenticationHandler<AuthenticationSchemeOptions>
     {
-        private IConfiguration _configuration;
+        private ILoginService _loginService;
         public BasicAuthenticationHandler(
         IOptionsMonitor<AuthenticationSchemeOptions> options,
         ILoggerFactory logger,
         UrlEncoder encoder,
         ISystemClock clock,
-        IConfiguration configuration
+        ILoginService loginService
         )
            : base(options, logger, encoder, clock)
         {
-            _configuration = configuration;
+            _loginService = loginService;
         }
         protected override Task<AuthenticateResult> HandleAuthenticateAsync()
         {
@@ -40,9 +41,8 @@ namespace LogProxyAPI.Helper
                 var credentials = Encoding.UTF8.GetString(credentialBytes).Split(':');
                 var username = credentials[0];
                 var password = credentials[1];
-                var configuredUserName = _configuration["usrname"];
-                var configuredPassword = _configuration["password"];
-                if (configuredUserName != username || configuredPassword != password)
+                
+                if (!_loginService.verify(username,password))
                 {
                     return Task.FromResult(AuthenticateResult.Fail("Invalid Credential")); ;
                 }
